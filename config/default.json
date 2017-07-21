@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "3309fa26dbccd75c82575dc31a98e4b493f4e6b0bbca1cfd20bb9ed9559247b51d1a621de33e02b788ed834998c3a4067d9950671574feb180a5afaddcfb648128ac53a9b4d4a84a034ed02162ca3564e4dcd1c8dda915aa624b2e744da42c7e9f555303d512613592a779a894d74a34372d4beb6f535a6c3f241b6696937b1ccd250a4fd39e8bd1563430bc4ccc984c8b9907f523b393a54b9a45e29cece02a7a8fa62ed6e8207348d96666bc2308dbf6a1472fd2f7fa579f016d035a64d19f2b5446b38325f0bf15be8a44d698f4c73cb851172eaf5af6e30354238045a653222354f87665077fa0914e3c62bf9bb26c3909433abe3d567bd09d56c4bbe6ce",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/gil"
+}
